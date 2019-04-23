@@ -1,0 +1,70 @@
+Buna ziua!
+
+~Rezolvarea cerintelor
+
+Cred ca toate cerintele au fost rezolvate corespunzator. Voi incerca sa descriu
+pe scurt cum am rezolvat cele 5 cerinte. Prima cerinta este obtinuta
+cu ajutorul functiilor meniu() si afiseaza_meniu(). Functia meniu primeste
+ca parametri numarul de secvente, numarul total de caractere al acestora si
+vectorul de pointeri, pentru a le putea transmite mai departe celorlalte
+functii apelate. Aceasta apeleaza afiseaza_meniu() care se ocupa cu afisarea 
+s highlighting-ul meniului. De aici, utilizatorul poate parcurge cu sagetile
+sus/jos. Dupa selectarea optiunii, se apeleaza o functie corespunzatoare
+modului de joc.
+ Cerinta 2 este realizata in apelurile new_game() cu diferiti
+parametri. In stdscr se da clear, apoi sunt creeate 2 ferestre - spanzuratoare
+si legenda. Datele cerute sunt afisate corespunzator.
+Cerinta 3 este realizata in main, prin parcurgerea tuturor argumentelor date
+executabilului. Fiecare fisier este deschis (daca este posibil) si parcurs
+pe linii. Cele care indeplinesc conditiile sunt memorate(se verifica intai
+numarul de caractere printabile. 0 va insemna ca nu retinem sirul),
+iar celelalte nu.
+Cerinta 4 este realizata prin folosirea functiei ascunde_sir.
+Aceasta imi va prelucra sirul trimis ca parametru, va scapa de spatiile 
+redundante si va obtine sirul ascuns. Aceasta intoarce (prin parametri) 
+cele 2 siruri si lungimea lor. Sirul ascuns este obtinut dupa ce sunt memorate
+literele corespunzatoare cuvintelor (capetele pentru cele cu lungimi peste 2,
+prima pentru cuvintele de 2 litere). Sirul "neascuns" este parcurs caracter
+cu caracter, iar daca se gasesc cele cautate, sunt afisate, altfel se afiseaza
+"_".
+Cerinta 5 este rezolvata de asemenea in new_game. Se intra cu un caracter
+aleator in "ch", apoi se asteapta introducerea altuia timp de 7 secunde.
+Daca nu se intampla asta, apelez functia genereaza_litera_random, care
+va obtine (local) un vector cu caracterele neincercate si negasite in sirul
+ascuns deja, apoi va extrage unul la intamplare si la va returna.
+
+~Interactiunea cu hangman
+
+Meniul este parcucrs cu sageti, iar optiunea este aleasa cu enter.
+Odata intrati, executabilul va lua orice tasta apasata de utilizator
+(fara sa astepte apasarea tastei ENTER). Se ignora sagetile, caracterele
+neprintabile sau orice cod ASCII sub 32 sau peste 127.
+Daca nu se introduce niciun caracter, acesta va genera unul in mod aleator
+cum am spus mai sus. Din ambele moduri de joc se poate iesi apasand Q, iar
+din meniu se poate iesi numai selectand optiunea "Quit"(evident, exceptand
+CTRL+C sau CTRL+\ ).
+Ar fi de mentionat faptul ca butonul de resume functioneaza corect, insa
+la apasarea sa fara a avea ce joc sa fie "resumed", se va iesi din aplicatie.
+
+~Bonus
+
+Ca bonus, am facut ca butonul de resume sa restituie ultimul meci, desi s-a
+iesit complet din aplicatie. Optiunea mea de resume foloseste un fisier text
+"resume.txt" pe care il citeste, respectiv scrie dupa plac. Cand este timpul
+sa salveze informatiile, va printa sirul cautat, cel ascuns, numarul de
+incercari si caracterele deja incercate(fara cele prezente in sirul ascuns).
+La citire, va prelua aceste informatii.
+Am introdus modul de joc "Infinit!" care ii ofera jucatorului dreptul la 1000
+de incercari. Dar cum caracterele deja introduse nu mai pot fi incercate,
+cele 1000 de incercari vor fi, practic, "infinite". In timpul acestui
+mod de joc, la fiecare caracter introdus, jucatorului ii este adresata
+o replica aleasa aleatoriu dintr-o lista. Se poate da resume si la acest mod
+de joc, la fel ca la modul normal.
+De asemenea, am pus o culoare la background si una la text. :)
+
+~Feedback
+
+Tema a fost interesanta si apreciez promptitudinea raspunsurilor de pe forum!
+
+Fazakas Alexandru
+311CC
